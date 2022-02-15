@@ -6,7 +6,7 @@
 
 The app has two separate views/components. The Product Listing Component and Cart Component. The list of products to be displayed is already provided in the app. 
 
-The app should implement the following functionalities:
+The app implements the following functionalities:
 
 - Clicking on each Add To Cart should add the item to the shopping cart. The listing in the Product Listing component should be updated to show the Increase/Decrease Quantity button and the quantity of the item in cart.
   
