@@ -7,17 +7,19 @@
         <p class="ma-0 mt-8 text-center">${{product.price}}</p>
       </div>
       <div class="card-actions justify-content-center pa-4">
-        <button class="x-small outlined" data-test-id="btn-item-add" (click)="addToCart(product,1)">
+        <button class="x-small outlined" data-test-id="btn-item-add" (click)="addToCart(product,1)"
+          *ngIf="!product.cartQuantity">
           Add To Cart
         </button>
 
-        <div class="layout-row justify-content-between align-items-center">
+        <div class="layout-row justify-content-between align-items-center" *ngIf="product.cartQuantity">
           <button class="x-small icon-only outlined" data-test-id="btn-quantity-subtract"
             (click)="decreaseQuantity(product)">
             <i class="material-icons">remove</i>
           </button>
 
-          <input type="number" class="cart-quantity" data-test-id="cart-quantity" [(ngModel)]="product.cartQuantity" (ngModelChange)="cartValue($event, product)" />
+          <input type="number" class="cart-quantity" data-test-id="cart-quantity" [(ngModel)]="product.cartQuantity"
+            (ngModelChange)="cartValue($event, product)" />
 
           <button class="x-small icon-only outlined" data-test-id="btn-quantity-add"
             (click)="increaseQuantity(product)">
